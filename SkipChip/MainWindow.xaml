@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkipChip"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SkipChip" Height="450" Width="800">
     <Grid>
-        
+        <TabControl Background="Gray">
+            <TabItem Header="Indscanning">
+                <Canvas>
+                    <Image HorizontalAlignment="Left" Height="200" Margin="100,60,0,0" VerticalAlignment="Top" Width="200" Source="C:\Users\Core\source\repos\SkipChip\Resources\Profile.png"/>
+                    <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" Margin="100,60,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Label Content="Navn: Kaare" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="14" Canvas.Left="100" Canvas.Top="265"/>
+                    <Label Content="Alder: 21" HorizontalAlignment="Left" Margin="351,60,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBlock Name="textBlock1" TextWrapping="Wrap" Canvas.Left="351" Canvas.Top="105" Width="375" Height="155"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet porta tortor. Integer commodo turpis non faucibus dapibus. 
+                        Aenean suscipit vehicula pellentesque. Nullam interdum varius lectus, vitae viverra ante eleifend ac. Praesent tincidunt diam erat, eget vestibulum dui accumsan nec. Suspendisse turpis leo, rutrum nec ante et, rhoncus mollis est. Sed tristique ornare massa ac luctus. 
+                        Vivamus eu lectus vulputate, gravida odio vel, luctus felis. Praesent et euismod lectus. Integer pretium ante at sapien pellentesque, quis condimentum elit tincidunt."
+                    </TextBlock>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Registering">
+                <Canvas>
+                </Canvas>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
