@@ -5,25 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkipChip"
         mc:Ignorable="d"
-        Title="SkipChip" Height="450" Width="800">
+        Title="SkipChip" Height="360" Width="800">
     <Grid>
         <TabControl Background="White">
             <TabItem Header="Indscanning">
                 <Canvas>
-                    <Image HorizontalAlignment="Center" Height="200" Margin="100,60,0,0" VerticalAlignment="Center" Width="200" Source="person-icon.png"/>
-                    <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" Margin="100,60,0,0" VerticalAlignment="Top" Width="200"/>
-                    <Label Content="Kaare, 32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="20" Canvas.Left="100" Canvas.Top="265"/>
-                    <TextBlock Name="textBlock1" TextWrapping="Wrap" Canvas.Left="351" Canvas.Top="105" Width="375" Height="155"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet porta tortor. Integer commodo turpis non faucibus dapibus. 
-                        Aenean suscipit vehicula pellentesque. Nullam interdum varius lectus, vitae viverra ante eleifend ac. Praesent tincidunt diam erat, eget vestibulum dui accumsan nec. Suspendisse turpis leo, rutrum nec ante et, rhoncus mollis est. Sed tristique ornare massa ac luctus. 
-                        Vivamus eu lectus vulputate, gravida odio vel, luctus felis. Praesent et euismod lectus. Integer pretium ante at sapien pellentesque, quis condimentum elit tincidunt."
-                    </TextBlock>
+                    <Image Name="ProfilePic" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200" Source="person-icon.png" Canvas.Left="10" Canvas.Top="10"/>
+                    <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="10"/>
+                    <Label Name="NameAge" Content="Navn, Alder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="20" Canvas.Left="10" Canvas.Top="215"/>
+                    <ListBox Name="ListBox" Height="242" Canvas.Left="215" Canvas.Top="10" Width="561"/>
                 </Canvas>
             </TabItem>
             <TabItem Header="Registering">
                 <Canvas>
+                    <Button Name="btnFindBruger" Content="Find Bruger" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="701" Canvas.Top="10" Click="btnFindBruger_Click"/>
+                    <TextBox Name="tbBruger" Height="20" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="10" Width="686"/>
+                    <Image Name="ProfilePicFind" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200" Source="person-icon.png" Canvas.Left="10" Canvas.Top="38"/>
+                    <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="38"/>
+                    <Label x:Name="NameAgeReg" Content="Navn, Alder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="20" Canvas.Left="10" Canvas.Top="243"/>
+                    <DatePicker Name="DatePicker" Height="25" Width="124" Canvas.Left="215" Canvas.Top="38" IsEnabled="False"/>
+                    <Label Content="Bemærkning:" Canvas.Left="215" Canvas.Top="68"/>
+                    <TextBox Name="Offense" Height="139" TextWrapping="Wrap" Width="561" Canvas.Left="215" Canvas.Top="99" TextChanged="Offense_TextChanged" IsEnabled="False"/>
+                    <Button Name="AddOffense" Content="Tilføj" Canvas.Left="701" Canvas.Top="246" Width="75" Click="AddOffense_Click" IsEnabled="False"/>
+                    <Label Name="Message" Content="" Canvas.Left="570" Canvas.Top="243" Width="126" Height="30"/>
                 </Canvas>
             </TabItem>
-        </TabControl>
+            <TabItem Header="Historik">
+                <Canvas>
+                    <ListBox Name="History" Height="281" Canvas.Left="10" Canvas.Top="10" Width="766"/>
+                </Canvas>
+            </TabItem>
 
+        </TabControl>
     </Grid>
 </Window>
