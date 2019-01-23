@@ -67,11 +67,15 @@ namespace SkipChip
             DateTime date = DateTime.Today;
             Label dateLabel = new Label();
             dateLabel.Content = date;
+
             Image profileImage = new Image();
             profileImage.Height = 50;
             profileImage.Source = p.ProfilePic;
+
             name.Content = p.Name;
+
             newPanel.Children.Add(dateLabel);
+            newPanel.Children.Add(profileImage);
             newPanel.Children.Add(name);
             History.Items.Add(newPanel);
         }
