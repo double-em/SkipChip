@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace SkipChip
 {
@@ -23,6 +24,7 @@ namespace SkipChip
         List<Person> persons = new List<Person>();
         private Person currentPerson = new Person("person-icon.png", "no", 0, new List<string>());
         private int personIndex = 0;
+        private bool personNoFind = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -82,6 +84,8 @@ namespace SkipChip
 
         private void btnFindBruger_Click(object sender, RoutedEventArgs e)
         {
+            Message.Content = "";
+            ProfilePicFind.Source = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "person-icon.png")));
             Person p = findPerson(tbBruger.Text);
             if (p != null)
             {
@@ -94,6 +98,7 @@ namespace SkipChip
             else
             {
                 tbBruger.Text = "Kunne ikke finde personen.";
+                personNoFind = true;
                 ProfilePic.Source = null;
                 NameAgeReg.Content = "Name, Alder";
             }
@@ -135,6 +140,21 @@ namespace SkipChip
         private void Offense_TextChanged(object sender, TextChangedEventArgs e)
         {
             AddOffense.IsEnabled = true;
+        }
+
+        private void TiScanning_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            ListBox.Items.Clear();
+            ScanIn(persons[personIndex - 1]);
+        }
+
+        private void TbBruger_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            if (personNoFind)
+            {
+                tbBruger.Text = "";
+                personNoFind = false;
+            }
         }
     }
 }

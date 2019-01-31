@@ -8,7 +8,7 @@
         Title="SkipChip" Height="360" Width="800">
     <Grid>
         <TabControl Background="White">
-            <TabItem Header="Indscanning">
+            <TabItem Name="tiScanning" Header="Indscanning" GotFocus="TiScanning_OnGotFocus">
                 <Canvas>
                     <Image Name="ProfilePic" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200" Source="person-icon.png" Canvas.Left="10" Canvas.Top="10"/>
                     <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="10"/>
@@ -18,8 +18,9 @@
             </TabItem>
             <TabItem Header="Registering">
                 <Canvas>
+                    <Label Content="Indtast Bruger: " Height="26" Width="88" Canvas.Left="10" Canvas.Top="7"/>
                     <Button Name="btnFindBruger" Content="Find Bruger" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Canvas.Left="701" Canvas.Top="10" Click="btnFindBruger_Click"/>
-                    <TextBox Name="tbBruger" Height="20" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="10" Width="686"/>
+                    <TextBox Name="tbBruger" Height="20" Canvas.Left="103" TextWrapping="Wrap" Canvas.Top="10" Width="593" GotFocus="TbBruger_OnGotFocus"/>
                     <Image Name="ProfilePicFind" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200" Source="person-icon.png" Canvas.Left="10" Canvas.Top="38"/>
                     <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="38"/>
                     <Label x:Name="NameAgeReg" Content="Navn, Alder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="20" Canvas.Left="10" Canvas.Top="243"/>
@@ -35,6 +36,7 @@
                     <ListBox Name="History" Height="281" Canvas.Left="10" Canvas.Top="10" Width="766"/>
                 </Canvas>
             </TabItem>
+
 
         </TabControl>
     </Grid>
