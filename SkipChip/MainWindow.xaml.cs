@@ -124,7 +124,7 @@ namespace SkipChip
             if (DatePicker.SelectedDate != null  && Offense.Text != "")
             {
                 var date = DatePicker.SelectedDate.Value;
-                currentPerson.offenses.Add("(" + date.Day + "/" + date.Month + " - " + date.Year + ") " + Offense.Text);
+                currentPerson.offenses.Add("(" + date.Day + "/" + date.Month + " - " + date.Year + "): " + Offense.Text);
                 DatePicker.SelectedDate = null;
                 Offense.Text = string.Empty;
                 AddOffense.IsEnabled = false;
@@ -145,7 +145,11 @@ namespace SkipChip
         private void TiScanning_OnGotFocus(object sender, RoutedEventArgs e)
         {
             ListBox.Items.Clear();
-            ScanIn(persons[personIndex - 1]);
+            if (personIndex > 0)
+            {
+                ScanIn(persons[personIndex - 1]);
+            }
+            
         }
 
         private void TbBruger_OnGotFocus(object sender, RoutedEventArgs e)
